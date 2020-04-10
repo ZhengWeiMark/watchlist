@@ -1,0 +1,23 @@
+python
+md project
+cd project
+python3 -m venv flask
+scripse/activate
+pip --default-timeout=1000 install  django
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ flask
+
+
+set FLASK_APP=hello.py
+set FLASK_ENV=development
+flask run
+
+http://127.0.0.1:5000/
+
+--------------------------------------------------
+git
+.gitignore 文件
+
+git init
+git add hello.py
+ git status
+git commit -m 'hello'
