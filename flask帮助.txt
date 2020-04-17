@@ -1,19 +1,70 @@
+安装python
+
+------新建flask项目----------
+
 python
 md project
 cd project
-python3 -m venv flask
-scripse/activate
-pip --default-timeout=1000 install  django
+python3 -m venv flask-venv-dir
+..flask-venv-dir/scripts/activate
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ flask
+如果有超时 pip --default-timeout=1000 install  flask
 
 
+---------验证环境----------
+..flask-venv-dir/scripts/activate
 set FLASK_APP=hello.py
 set FLASK_ENV=development
 flask run
 
 http://127.0.0.1:5000/
 
---------------------------------------------------
+---------执行项目----------
+cd project
+
+set FLASK_APP=flaskr
+
+flask run
+
+http://127.0.0.1:5000/hello
+
+
+---------debug----------
+
+TabError: inconsistent use of tabs and spaces in indentation
+由于混用了tab键和4个空格键造成的，可以检查一下代码，要么全部使用tab，要么全部使用4个空格
+
+mozilla chrome
+
+---------安装、测试----------
+pip install -e .
+在根目录安装项目，之后可在任何地方flask run
+
+pip list
+查看虚拟环境安装模块
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ pytest coverage
+---------发行----------
+虚拟环境下
+pip install wheel
+
+项目根目录下
+python setup.py bdist_wheel
+结果dist出现flaskr-1.0.0-py3-none-any.whl
+
+
+---------部署----------
+新建项目根目录，创建虚拟环境，复制wheel文件到此
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ 
+ flaskr-1.0.0-py3-none-any.whl 
+ 
+获得密钥 
+>>> import os
+>>> print(os.urandom(16))
+
+ 运行服务器
+waitress-serve --call flaskr:create_app
+------------版本管理-----------------
 git
 .gitignore 文件
 
@@ -21,3 +72,6 @@ git init
 git add hello.py
  git status
 git commit -m 'hello'
+
+
+
