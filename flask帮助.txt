@@ -30,20 +30,26 @@ http://127.0.0.1:5000/hello
 
 
 ---------debug----------
-
 TabError: inconsistent use of tabs and spaces in indentation
 由于混用了tab键和4个空格键造成的，可以检查一下代码，要么全部使用tab，要么全部使用4个空格
 
 mozilla chrome
 
----------安装、测试----------
+
+---------安装----------
 pip install -e .
 在根目录安装项目，之后可在任何地方flask run
 
 pip list
-查看虚拟环境安装模块
+查看虚拟环境安装模块，项目安装结果
+
+
+-------------测试（掠过）----------------
 
 pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ pytest coverage
+
+
+
 ---------发行----------
 虚拟环境下
 pip install wheel
@@ -64,6 +70,8 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/
 
  运行服务器
 waitress-serve --call flaskr:create_app
+
+
 ------------版本管理-----------------
 git
 .gitignore 文件
@@ -74,4 +82,6 @@ git add hello.py
 git commit -m 'hello'
 
 
-
+-----继续开发 Flaskr 项目-----
+----安装发行simple 项目----
+----快速上手------

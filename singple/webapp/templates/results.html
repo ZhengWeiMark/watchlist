@@ -4,16 +4,14 @@
 
 <h2>{{ the_title }}</h2>
 
-<p>You submitted the following data:</p>
+<p>你提交的信息:</p>
 <table>
 <tr><td>Phrase:</td><td>{{ the_phrase }}</td></tr>
 <tr><td>Letters:</td><td>{{ the_letters }}</td></tr>
 </table>
 
-#注意the_phrase,the_letters,the_results 这些额外的参数值，在呈现之前是需要赋值给他们的。
 
-<p>When "{{the_phrase }}" is searched for "{{ the_letters }}", the following 
-results are returned:</p>
+<p>When "{{the_phrase }}" is searched for "{{ the_letters }}", 查询结果:</p>
 <h3>{{ the_results }}</h3>
 
 {% endblock %}
